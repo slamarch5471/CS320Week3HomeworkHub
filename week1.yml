@@ -1,4 +1,4 @@
-- name: First play
+- name: First play edit
   hosts: cs320
   tasks:
     - name: First Task to do
