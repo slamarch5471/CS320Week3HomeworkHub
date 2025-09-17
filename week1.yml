@@ -1,0 +1,33 @@
+- name: First play
+  hosts: cs320
+  tasks:
+    - name: First Task to do
+      ansible.builtin.ping:
+
+    - name: Second task output message
+      ansible.builtin.debug:
+        msg: This should output to my screen
+
+    - name: Number 1 get hostname
+      ansible.builtin.debug:
+        var: ansible_facts['hostname']
+      
+    - name: Number 2 get ip address
+      ansible.builtin.debug:
+        var: ansible_facts['default_ipv4']['address']
+
+    - name: Number 3 get Linux Distro Family
+      ansible.builtin.debug:
+        var: ansible_facts['distribution_file_variety']
+
+    - name: Number 4 get disk size
+      ansible.builtin.debug:
+        var: ansible_facts['devices']['vda']['partitions']['vda2']['size']
+
+    - name: Number 5 get memory total
+      ansible.builtin.debug:
+        var: ansible_facts['memory_mb']['real']['total']
+
+    - name: Number 6 get processor cores
+      ansible.builtin.debug:
+        var: ansible_facts['processor_cores']    
